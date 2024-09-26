@@ -17,7 +17,7 @@ public class RoleOutboxEntityProvider implements JpaEntityProvider {
 
   @Override
   public String getChangelogLocation() {
-    return "META-INF/jpa-role_outbox-changelog-23.0.0.xml";
+    return "META-INF/jpa-user_counts-changelog-23.0.0.xml";
   }
 
   @Override
