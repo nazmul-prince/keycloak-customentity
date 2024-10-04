@@ -1,1 +1,1 @@
-com.keycloak.customentity.provider.RoleOutboxEntityProviderFactory
+com.keycloak.customentity.providerfactory.UserCountsEntityProviderFactory

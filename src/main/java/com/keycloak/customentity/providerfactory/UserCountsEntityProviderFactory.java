@@ -1,19 +1,19 @@
-package com.keycloak.customentity.provider;
+package com.keycloak.customentity.providerfactory;
 
+import com.keycloak.customentity.provider.UserCountsEntityProvider;
 import org.keycloak.Config.Scope;
 import org.keycloak.connections.jpa.entityprovider.JpaEntityProvider;
 import org.keycloak.connections.jpa.entityprovider.JpaEntityProviderFactory;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
-import org.keycloak.models.RealmModel;
 
-public class RoleOutboxEntityProviderFactory implements JpaEntityProviderFactory {
+public class UserCountsEntityProviderFactory implements JpaEntityProviderFactory {
 
-  protected static final String ID = "role-outbox-entity";
+  public static final String ID = "user-counts-entity-provider";
 
   @Override
   public JpaEntityProvider create(KeycloakSession session) {
-    return new RoleOutboxEntityProvider();
+    return new UserCountsEntityProvider();
   }
 
   @Override
