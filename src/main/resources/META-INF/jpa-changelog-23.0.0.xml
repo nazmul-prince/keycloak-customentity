@@ -8,28 +8,26 @@
     <changeSet id="1" author="Nazmul Huda">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="role_outbox"/>
+                <tableExists tableName="user_counts"/>
             </not>
         </preConditions>
 
-        <createTable tableName="role_outbox">
+        <createTable tableName="user_counts">
             <column name="id" type="UUID" defaultValueComputed="gen_random_uuid()">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
 
-            <column name="is_processed" type="BOOLEAN">
+            <column name="admin_count" type="integer" defaultValue="0">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="user_id" type="VARCHAR(255)">
+            <column name="general_user_count" type="integer" defaultValue="0">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="event_type" type="VARCHAR(255)">
+            <column name="realm_id" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-
-            <column name="created_by" type="VARCHAR(255)"/>
 
             <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
                 <constraints nullable="false"/>

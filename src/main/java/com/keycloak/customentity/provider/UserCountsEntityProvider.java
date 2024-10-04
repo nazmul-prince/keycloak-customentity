@@ -3,12 +3,13 @@ package com.keycloak.customentity.provider;
 import java.util.Arrays;
 import java.util.List;
 
-import com.keycloak.customentity.entity.RoleOutbox;
+import com.keycloak.customentity.entity.UserCounts;
+import com.keycloak.customentity.providerfactory.UserCountsEntityProviderFactory;
 import org.keycloak.connections.jpa.entityprovider.JpaEntityProvider;
 
-public class RoleOutboxEntityProvider implements JpaEntityProvider {
+public class UserCountsEntityProvider implements JpaEntityProvider {
 
-  private static Class<?>[] entities = {RoleOutbox.class};
+  private static Class<?>[] entities = {UserCounts.class};
 
   @Override
   public List<Class<?>> getEntities() {
@@ -17,7 +18,7 @@ public class RoleOutboxEntityProvider implements JpaEntityProvider {
 
   @Override
   public String getChangelogLocation() {
-    return "META-INF/jpa-user_counts-changelog-23.0.0.xml";
+    return "META-INF/jpa-changelog-23.0.0.xml";
   }
 
   @Override
@@ -25,6 +26,6 @@ public class RoleOutboxEntityProvider implements JpaEntityProvider {
 
   @Override
   public String getFactoryId() {
-    return RoleOutboxEntityProviderFactory.ID;
+    return UserCountsEntityProviderFactory.ID;
   }
 }
